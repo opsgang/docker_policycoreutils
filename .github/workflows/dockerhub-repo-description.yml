@@ -4,7 +4,7 @@ name: Uploads SELinux tools repo description to hub.docker.com
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v*'
 
 jobs:
   dockerhub-repo-description:
