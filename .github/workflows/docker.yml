@@ -1,3 +1,4 @@
+---
 name: Builds the selinux-tools Docker image and pushes to hub.docker.com
 
 on:
@@ -23,7 +24,7 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v2
 
-      - name: Fetching tags 
+      - name: Fetching tags
         run: git fetch --prune --unshallow --force --tags
 
       - name: Prepare
@@ -53,7 +54,7 @@ jobs:
             MAJOR=${MINOR%.*}
             TAGS="${DOCKER_IMAGE}:${SELINUX_VERSION},${DOCKER_IMAGE}:${MINOR},${DOCKER_IMAGE}:${MAJOR},${DOCKER_IMAGE}:latest,localhost:5000/test"
           fi
- 
+
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=selinux_version::${SELINUX_VERSION}
           echo ::set-output name=docker_image::${DOCKER_IMAGE}
@@ -80,12 +81,6 @@ jobs:
       - name: Available platforms
         run: echo ${{ steps.qemu.outputs.platforms }}
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
       - name: Build for scans
         uses: docker/build-push-action@v2
         with:
@@ -108,7 +103,7 @@ jobs:
           severity-cutoff: high
 
       - name: Login to DockerHub
-        uses: docker/login-action@v1 
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}

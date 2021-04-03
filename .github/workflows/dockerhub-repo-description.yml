@@ -1,3 +1,4 @@
+---
 name: Uploads SELinux tools repo description to hub.docker.com
 
 on:
