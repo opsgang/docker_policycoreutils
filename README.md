@@ -1,6 +1,6 @@
 # opsgang/selinux-toolse
 
-Docker image with to manage SELinux.
+Docker image to manage SELinux policies.
 
 ## Problem Statement
 
