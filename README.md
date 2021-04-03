@@ -32,6 +32,6 @@ pushing it to Docker Hub.
 ## Links
 
 * [opsgang/selinux-tools on Docker Hub](https://hub.docker.com/r/opsgang/selinux-tools)
-* [Dockerfile](https://github.com/opsgang/selinux-tools/blob/main/Dockerfile)
+* [Dockerfile](https://github.com/opsgang/docker_selinux_tools/blob/main/Dockerfile)
 * [Build pipeline](https://github.com/opsgang/selinux-tools/tree/main/.github/workflows)
 
